@@ -29,21 +29,3 @@ opt.termguicolors = true
 -- 不可視文字可視化
 opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
-
-vim.cmd("colorscheme nightfox")
-require('lualine').setup({'nightfox'})
-
--- https://zenn.dev/yuma14/articles/ddc-vim-with-lua
-vim.fn["ddc#custom#patch_global"]('ui', 'native')  -- uiは一番最初に設定する必要がある
-vim.fn["ddc#custom#patch_global"]('sources', {'around',"nvim-lsp"})
-vim.fn["ddc#custom#patch_global"]('sourceOptions', {
-  _ = {
-    matchers = {'matcher_fuzzy'},
-    sorters = {'sorter_fuzzy'},
-  }
-})
-vim.fn["ddc#enable"]()
-
--- vim.keymap.set('i','<C-j>','<Plug>(skkeleton-toggle)')
--- vim.keymap.set('c','<C-j>','<Plug>(skkeleton-toggle)')
--- vim.fn["skkeleton#config"]({globalJisyo="/home/atsuyaw/.skk/SKK-JISYO.L"})
